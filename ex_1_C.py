@@ -1,6 +1,7 @@
 def is_impossible(n: int, pos: int, neg: int) -> bool:
     return not (pos - n * neg <= n <= n * pos - neg)
 
+
 def find_x(n: int, balance: int, sgn: int, pos: int, neg: int) -> int:
     ans = -999
     for x in range(1, n + 1):
@@ -38,6 +39,7 @@ def solve_puzzle(s: str) -> str:
 
 def main():
     print(solve_puzzle(input().strip()))
+
 
 if __name__ == '__main__':
     main()

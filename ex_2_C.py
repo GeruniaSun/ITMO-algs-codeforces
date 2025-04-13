@@ -1,5 +1,6 @@
 from itertools import accumulate
 
+
 def check(m: int, arr: [], k: int, n: int):
     indices = [1 if elem >= m else -1 for elem in arr]
     sums = list(accumulate(indices, initial=0))
@@ -11,17 +12,18 @@ def check(m: int, arr: [], k: int, n: int):
 
     return max_diff > 0
 
-def max_median(arr: [], k: int, n: int) -> int:
-    l = 0
-    r = n + 1
-    while l < r:
-        mid = (l + r + 1) // 2
-        if check(mid, arr, k, n):
-            l = mid
-        else:
-            r = mid - 1
 
-    return l
+def max_median(arr: [], k: int, n: int) -> int:
+    left = 0
+    right = n + 1
+    while left < right:
+        mid = (left + right + 1) // 2
+        if check(mid, arr, k, n):
+            left = mid
+        else:
+            right = mid - 1
+
+    return left
 
 
 def main():

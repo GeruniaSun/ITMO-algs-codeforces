@@ -29,6 +29,7 @@ def solve_array() -> str:
 
     return "YES" if ok else "NO"
 
+
 def main():
     test_count = int(input().strip())
     for _ in range(test_count):

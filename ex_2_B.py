@@ -2,6 +2,7 @@ from collections import namedtuple
 
 dot = namedtuple('dot', ['id', 'coord', 'weight'])
 
+
 def read_dots(m: int) -> [dot]:
     dots = []
 
@@ -11,11 +12,13 @@ def read_dots(m: int) -> [dot]:
 
     return dots
 
+
 def print_answer(weight: int, n: int, dots: [dot]):
     print(weight)
 
     for i in range(n):
         print(dots[i].id, dots[2 * n - i - 1].id)
+
 
 def find_min_weight() -> None:
     n, m = map(int, input().split())
@@ -26,7 +29,6 @@ def find_min_weight() -> None:
     dots.sort(key=lambda d: d.coord)
 
     print_answer(min_weight, n, dots)
-
 
 
 def main():
